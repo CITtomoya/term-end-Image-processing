@@ -20,7 +20,7 @@ dst_points = np.float32([[0, 0], [1599, 0], [0, 1199], [1599, 1199]])
 # 射影変換行列を取得
 transform_matrix = cv2.getPerspectiveTransform(src_points, dst_points)
 # 画像を変換
-img_transformed = cv2.warpPerspective(img, transform_matrix, (1600, 1200),flags = cv2.INTER_CUBIC)
+img_transformed = cv2.warpPerspective(img, transform_matrix, (1600, 1200),flags = cv2.INTER_LINEAR)
 
 # 変換後の画像を表示
 plt.imshow(img_transformed, cmap='gray')
